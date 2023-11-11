@@ -8,11 +8,11 @@ without altering its functionality. This includes the removal of whitespace and 
 Minification of HTML5 code results in compact file size.
 
 ## Usage
-```
+```go
 import "github.com/THREATINT/gofiber-minifier/minifier"
 ```
 
-```
+```go
 app.Use(minifier.New())
 ```
 
@@ -24,3 +24,4 @@ by Taco de Wollf.
 Release under the MIT License. (see LICENSE)
 
 ## QA
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/52f0fd025b014597a177808959534f2f)](https://app.codacy.com/gh/THREATINT/gofiber-minifier/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)

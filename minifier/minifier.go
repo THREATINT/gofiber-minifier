@@ -4,7 +4,10 @@ import (
 	"bytes"
 	"github.com/gofiber/fiber/v2"
 	"github.com/tdewolff/minify/v2"
+	"github.com/tdewolff/minify/v2/css"
 	"github.com/tdewolff/minify/v2/html"
+	"github.com/tdewolff/minify/v2/js"
+	"regexp"
 )
 
 func New(config ...Config) fiber.Handler {
@@ -35,7 +38,15 @@ func New(config ...Config) fiber.Handler {
 		c.Response().ResetBody()
 
 		m = minify.New()
-		m.AddFunc("text/html", html.Minify)
+		if cfg.minifyHTML {
+			m.AddFunc("text/html", html.Minify)
+		}
+		if cfg.minifyCSS {
+			m.AddFunc("text/css", css.Minify)
+		}
+		if cfg.minifyJS {
+			m.AddFuncRegexp(regexp.MustCompile("^(application|text)/(x-)?(java|ecma)script$"), js.Minify)
+		}
 		if err = m.Minify("text/html", c.Response().BodyWriter(), bytes.NewReader(origBody)); err != nil {
 			// just in case minifying does not work for any reason, we fail in a gentle way
 			// by writing the original (un-minified) body

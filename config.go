@@ -1,4 +1,4 @@
-package minifier
+package gofiber_minifier
 
 import (
 	"github.com/gofiber/fiber/v2"

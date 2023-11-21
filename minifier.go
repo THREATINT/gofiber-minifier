@@ -1,4 +1,4 @@
-package minifier
+package gofiber_minifier
 
 import (
 	"bytes"

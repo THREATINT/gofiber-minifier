@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/gofiber/fiber/v2 v2.51.0
-	github.com/tdewolff/minify/v2 v2.20.8
+	github.com/tdewolff/minify/v2 v2.20.9
 )
 
 require (

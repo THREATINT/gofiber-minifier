@@ -3,8 +3,8 @@ module github.com/THREATINT/gofiber-minifier
 go 1.21
 
 require (
-	github.com/gofiber/fiber/v2 v2.51.0
-	github.com/tdewolff/minify/v2 v2.20.10
+	github.com/gofiber/fiber/v2 v2.52.0
+	github.com/tdewolff/minify/v2 v2.20.12
 )
 
 require (
@@ -19,5 +19,5 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.51.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
-	golang.org/x/sys v0.15.0 // indirect
+	golang.org/x/sys v0.16.0 // indirect
 )

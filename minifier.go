@@ -39,7 +39,9 @@ func New(config ...Config) fiber.Handler {
 
 		m = minify.New()
 		if cfg.minifyHTML {
-			m.AddFunc("text/html", html.Minify)
+			m.Add("text/html", &html.Minifier{
+				KeepEndTags: true,
+			})
 		}
 		if cfg.minifyCSS {
 			m.AddFunc("text/css", css.Minify)
